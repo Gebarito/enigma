@@ -111,7 +111,8 @@ def generate_random_plugboard_combination(nr_pairs = 13):
 def encrypt(str: str) -> str:
 	'''
 	    Criptografa uma string usando o algoritmo Enigma.
-        param str: string a ser criptografada
+
+		param str: string a ser criptografada
         type str: str
         return: string criptografada
         type: str
