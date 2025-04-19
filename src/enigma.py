@@ -117,9 +117,7 @@ def encrypt(str: str) -> str:
         return: string criptografada
         type: str
 	'''
-	encrypted_str = ""
-	decrypt_data = [] # a
-	
+	encrypted_str = ""	
 	nr_rotors = 3
 	rotors_rotation = []
 	for i in range(nr_rotors):
@@ -129,11 +127,11 @@ def encrypt(str: str) -> str:
 
 	for letter in str:
 		letter = letter.upper()
+		if letter not in alphabet:
+			encrypted_str += letter
+			continue
 		encrypted_str += encode_letter(letter, plugboard, rotors, reflector)
-		decrypt_data.append(plugboard, rotors, reflector)
 		rotors = update_rotors(rotors, rotors_rotation)
 	
 	return encrypted_str
 
-def decrypt(str: str) -> str:
-    return ''

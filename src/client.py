@@ -1,5 +1,5 @@
-import socket, threading
-import enigma as enigma
+import socket
+from enigma import encrypt
 from constants import SERVER_ADDRESS, SERVER_PORT
 
 def run_client() -> socket.socket:
@@ -26,12 +26,12 @@ def send_messages(client) -> None:
         if msg == 'quit':
             break
 
-        encrypted_msg = enigma.encrypt(msg)
+        encrypted_msg = encrypt(msg)
 
         try:
             client.send(encrypted_msg.encode('utf-8'))
         except Exception as e:
-            return print(f"Erro ao enviar mensagem: {e}")
+            print(f"Erro ao enviar mensagem: {e}")
 
 def receive_messages(client) -> None:
     '''
@@ -45,21 +45,17 @@ def receive_messages(client) -> None:
         try:
             msg = client.recv(2048).decode('utf-8')
 
-            decrypted_msg = enigma.decrypt(msg)
-            print(decrypted_msg + '\n')
-
+            #decrypted_msg = enigma.decrypt(msg)
+            #print(decrypted_msg + '\n')
+            print(msg + '\n')
         except Exception as e:
-            return print(f"Erro ao receber mensagem: {e}")
+            print(f"Erro ao receber mensagem: {e}")
 
 
 if __name__ == "__main__":
     connection = run_client()
 
     while connection:
-        try:
-            threading.Thread(target=send_messages, args=(connection,)).start()
-            threading.Thread(target=receive_messages, args=(connection,)).start()
-        except Exception as e:
-            print(f"Erro ao iniciar threads: {e}")
-            break
+        send_messages(connection)
+        receive_messages(connection)
 
