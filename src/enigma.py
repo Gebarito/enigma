@@ -15,11 +15,8 @@ def create_rotors(nr_rotors):
 
 def create_reflector():
 	reflector = {}
-	reflector_used = "\nUsing the following reflector:\n"
-	random_reflector_combination = reflector_combination
-	reflector_used += random_reflector_combination
-	for i in range(len(random_reflector_combination)):
-		reflector[alphabet[i]] = random_reflector_combination[i]
+	for i in range(len(reflector_combination)):
+		reflector[alphabet[i]] = reflector_combination[i]
 
 	return reflector
 
