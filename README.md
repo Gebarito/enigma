@@ -33,17 +33,17 @@ Abra o diretorio do repositorio e execute:
 ```sh
 python3 client.py
 ```
-> Para cada novo cliente é necessário uma nova instancia de um terminal.\
+> Para cada novo cliente é necessário uma nova instancia de um terminal.  <br />
 
 ## Como usar
 O servidor recebe as mensagens criptografadas e repassa para os clientes conectados nele para simular
-o que acontecia com o Enigma na segunda guerra (as mensagens eram passadas em canal aberto porem criptografadas).\
-O cliente pode enviar mensagens criptografadas e ouvir mensagens a descriptografando.\
-Para desligar o servidor execute `cntrl + D` ou `cntrl + C`.\
+o que acontecia com o Enigma na segunda guerra (as mensagens eram passadas em canal aberto porem criptografadas)./
+O cliente pode enviar mensagens criptografadas e ouvir mensagens a descriptografando.  <br />
+Para desligar o servidor execute `cntrl + D` ou `cntrl + C`.  <br />
 Para sair do cliente faça o mesmo ou digite `quit` no shell.
 
 ## Bibliografia & material de apoio
-https://en.wikipedia.org/wiki/Enigma_machine\
-http://wiki.franklinheath.co.uk/index.php/Enigma/Sample_Messages\
-https://github.com/TiagoValdrich/python-socket-chat\
+https://en.wikipedia.org/wiki/Enigma_machine  <br />
+http://wiki.franklinheath.co.uk/index.php/Enigma/Sample_Messages  <br />
+https://github.com/TiagoValdrich/python-socket-chat\  <br />
 https://www.dio.me/articles/faca-o-seu-proprio-chat-utilizando-python-atraves-de-sockets\
