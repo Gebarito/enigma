@@ -13,6 +13,7 @@ Este projeto faz parte da disciplina de segurança da informação.
 ```sh
 git
 Python 3.12.3
+numpy 1.26.4
 ```
 
 > Este projeto foi desenvolvido e testado em um Ubuntu 22.04 no windows 10 (WSL2).
