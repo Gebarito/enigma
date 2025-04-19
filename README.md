@@ -1,5 +1,7 @@
 # ENYGMA CHAT
 
+Python Socket Chat usando o método de criptografia do Enigma.
+
 ## Introdução
 
 Implementação do algoritmo de criptografia utilizado na segunda guerra mundial que foi descriptografado posteriormente por Alan Turing.
@@ -18,7 +20,7 @@ Python 3.12.3
 ## Instalando & executando o projeto
 #### Clone o repositorio e abra pasta
 ```sh
-git clone  && cd enigma-chat/src/
+git clone https://github.com/Gebarito/enigma.git && cd enigma/src/
 ```
 
 #### Execute o servidor
@@ -27,11 +29,11 @@ python3 server.py
 ```
 
 #### Execute os clientes
-Para cada novo cliente é necessário uma nova instancia de um terminal.\
 Abra o diretorio do repositorio e execute:
 ```sh
 python3 client.py
 ```
+> Para cada novo cliente é necessário uma nova instancia de um terminal.\
 
 ## Como usar
 O servidor recebe as mensagens criptografadas e repassa para os clientes conectados nele para simular
@@ -41,4 +43,6 @@ Para desligar o servidor execute `cntrl + D` ou `cntrl + C`.\
 Para sair do cliente faça o mesmo ou digite `quit` no shell.
 
 ## Bibliografia & material de apoio
+https://en.wikipedia.org/wiki/Enigma_machine
 http://wiki.franklinheath.co.uk/index.php/Enigma/Sample_Messages
+https://github.com/TiagoValdrich/python-socket-chat
