@@ -1,30 +1,8 @@
 import socket
-import threading
+import enigma.enigma as enigma
 
 SERVER_PORT = 12000
 SERVER_ADDRESS = '127.0.0.1'
-
-def encrypt(msg: str) -> str:
-    '''
-        Criptografa a mensagem.
-
-        param msg: Mensagem a ser criptografada
-        type msg: str
-        return: Mensagem criptografada
-        rtype: str
-    '''
-    return msg
-
-def decrypt(msg: str) -> str:
-    '''
-        Decriptografa a mensagem.
-
-        param msg: Mensagem a ser decriptografada
-        type msg: str
-        return: Mensagem decriptografada
-        rtype: str
-    '''
-    return msg
 
 def run_client():
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -49,7 +27,7 @@ def send_messages(client) -> None:
         if msg == 'quit':
             break
 
-        encrypted_msg = encrypt(msg)
+        encrypted_msg = enigma.encrypt(msg)
 
         try:
             client.send(encrypted_msg.encode('utf-8'))
@@ -68,7 +46,7 @@ def receive_messages(client) -> None:
         try:
             msg = client.recv(2048).decode('utf-8')
 
-            decrypted_msg = decrypt(msg)
+            decrypted_msg = enigma.decrypt(msg)
             print(decrypted_msg + '\n')
 
         except Exception as e:

@@ -45,5 +45,6 @@ Para sair do cliente faça o mesmo ou digite `quit` no shell.
 ## Bibliografia & material de apoio
 https://en.wikipedia.org/wiki/Enigma_machine  <br />
 http://wiki.franklinheath.co.uk/index.php/Enigma/Sample_Messages  <br />
-https://github.com/TiagoValdrich/python-socket-chat\  <br />
-https://www.dio.me/articles/faca-o-seu-proprio-chat-utilizando-python-atraves-de-sockets\
+https://github.com/Goncalo-Chambel/EnigmaMachine <br />
+https://github.com/TiagoValdrich/python-socket-chat  <br />
+https://www.dio.me/articles/faca-o-seu-proprio-chat-utilizando-python-atraves-de-sockets
