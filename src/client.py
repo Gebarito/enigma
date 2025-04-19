@@ -24,6 +24,7 @@ def send_messages(client) -> None:
     while True:
         msg = input("Digite sua mensagem: ")
         if msg == 'quit':
+            exit()
             break
 
         encrypted_msg = encrypt(msg)
@@ -44,9 +45,6 @@ def receive_messages(client) -> None:
     while True:
         try:
             msg = client.recv(2048).decode('utf-8')
-
-            #decrypted_msg = enigma.decrypt(msg)
-            #print(decrypted_msg + '\n')
             print(msg + '\n')
         except Exception as e:
             print(f"Erro ao receber mensagem: {e}")

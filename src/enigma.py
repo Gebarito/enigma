@@ -82,7 +82,6 @@ def encode_letter(letter, plugboard, rotors, reflector):
 	return coded_letter
 
 def generate_random_plugboard_combination(nr_pairs = 13):
-
 	plugboard = {}
 
 	free_indexes = np.linspace(0,25,num=26, dtype='int')
