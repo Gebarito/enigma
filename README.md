@@ -42,7 +42,7 @@ O cliente pode enviar mensagens criptografadas e ouvir mensagens a descriptograf
 Para desligar o servidor execute `cntrl + D` ou `cntrl + C`.  <br />
 Para sair do cliente faça o mesmo ou digite `quit` no shell.
 
-## Bibliografia & material de apoio
+## Referencias
 https://en.wikipedia.org/wiki/Enigma_machine  <br />
 http://wiki.franklinheath.co.uk/index.php/Enigma/Sample_Messages  <br />
 https://github.com/Goncalo-Chambel/EnigmaMachine <br />
