@@ -1,10 +1,6 @@
-import socket
-import threading
-
+import socket, threading
+from constants import SERVER_ADDRESS, SERVER_PORT
 connections = []
-
-SERVER_PORT = 12000
-SERVER_ADDRESS = '127.0.0.1'
 
 def handle_client(client) -> None:
     '''
@@ -39,6 +35,7 @@ def run_server() -> None:
     try:
         server.bind((SERVER_ADDRESS, SERVER_PORT))
         server.listen()
+        print('Conectado a porta: ' + str(SERVER_PORT))
     except Exception as e:
         return print(f"Erro ao iniciar servidor: {e}")	
 

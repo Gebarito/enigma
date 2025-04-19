@@ -1,10 +1,8 @@
-import socket
-import enigma.enigma as enigma
+import socket, threading
+import enigma as enigma
+from constants import SERVER_ADDRESS, SERVER_PORT
 
-SERVER_PORT = 12000
-SERVER_ADDRESS = '127.0.0.1'
-
-def run_client():
+def run_client() -> socket.socket:
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     try:
         client.connect((SERVER_ADDRESS, SERVER_PORT))
@@ -12,6 +10,7 @@ def run_client():
         return print(f"Erro ao conectar ao servidor: {e}")
 
     print("Conectado ao servidor.")
+    return client
 
 
 def send_messages(client) -> None:
@@ -54,4 +53,13 @@ def receive_messages(client) -> None:
 
 
 if __name__ == "__main__":
-    run_client()
+    connection = run_client()
+
+    while connection:
+        try:
+            threading.Thread(target=send_messages, args=(connection,)).start()
+            threading.Thread(target=receive_messages, args=(connection,)).start()
+        except Exception as e:
+            print(f"Erro ao iniciar threads: {e}")
+            break
+
